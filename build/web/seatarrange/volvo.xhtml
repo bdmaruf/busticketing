@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./seatarrange.xhtml">
+
+            <ui:define name="left">
+                <h:form>
+                    <p:panel>
+                        <br/>
+
+
+                        <p:outputLabel value="Driver" style="padding-left: 120px; color: #D20005"/>
+                        <p:selectManyCheckbox id="basic"  value="#{seatSelectionView.selectedSeats}" layout="grid" columns="4" >
+                            <p:ajax update=":form2:list"/>
+                            <f:selectItems id="items" value="#{seatSelectionView.seatnumbers}" var="seat" itemLabel="#{seat}" itemValue="#{seat}" />
+                            
+                        </p:selectManyCheckbox>
+
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content" id="list">
+                <h:form id="form2">
+                    <p:outputLabel value="available seat"/> <h:outputText value="&#160;" />
+                    <p:outputLabel value="booking seat"/> <h:outputText value="&#160;" />
+                    <p:outputLabel value="selected seat"/><br/>
+
+
+                    <p:dataTable id="list"  var="seat" value="#{seatSelectionView.selectedSeats}" style="min-height: 250px" >
+                        <p:column headerText="Seat">
+                            <h:outputText value="#{seat}" />
+                        </p:column>
+
+                        <p:column headerText="Class">
+                            <h:outputText value="Reqular" />
+                        </p:column>
+
+                        <p:column headerText="Prize">
+                            <h:outputText value="1000" />
+                        </p:column>
+
+                    </p:dataTable>
+                    <p:outputLabel value="Total: 500" /><br/>
+                    <p:outputLabel value="Choose Bording Point: "/><br/>
+                    <p:selectOneMenu  value="Motijhil,Khulna" style="width:150px">
+                        <p:ajax   />
+                        <f:selectItem itemLabel="Select Bording Point" itemValue="" noSelectionOption="true" />
+
+                    </p:selectOneMenu><br/>
+                    <p:commandButton value="Continue"/>
+                    <p:commandButton value="Cancle"/>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

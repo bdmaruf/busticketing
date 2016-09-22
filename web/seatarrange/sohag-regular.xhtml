@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./seatarrange.xhtml">
+
+            <ui:define name="left">
+                <h:form>
+                    <p:panel>
+                        <br/>
+                        <p:message id="msg" for="basic"/>
+                        <p:outputLabel value="Driver" style="padding-left: 120px; color: #D20005"/>
+                        <p:selectManyCheckbox  id="basic" value="#{seatSelectionView.selectedCities}" layout="grid" columns="4" >
+                            <p:ajax update="msg" />
+                            <f:selectItems value="#{seatSelectionView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
+                            
+                            <f:selectItem itemLabel="A1" itemValue="A1" />
+                            <f:selectItem itemLabel="A2" itemValue="A2" />
+                            <f:selectItem itemLabel="A3" itemValue="A3" />
+                            <f:selectItem itemLabel="A4" itemValue="A4" />
+                            <f:selectItem itemLabel="B1" itemValue="B1" />
+                            <f:selectItem itemLabel="B2" itemValue="B2" />
+                            <f:selectItem itemLabel="B3" itemValue="B3" />
+                            <f:selectItem itemLabel="B4" itemValue="B4" />
+                            <f:selectItem itemLabel="C1" itemValue="C1" />
+                            <f:selectItem itemLabel="C2" itemValue="C2" />
+                            <f:selectItem itemLabel="C3" itemValue="C3" />
+                            <f:selectItem itemLabel="C4" itemValue="C4" />
+                            <f:selectItem itemLabel="D1" itemValue="D1" />
+                            <f:selectItem itemLabel="D2" itemValue="D2" />
+                            <f:selectItem itemLabel="D3" itemValue="D3" />
+                            <f:selectItem itemLabel="D4" itemValue="D4" />
+                            <f:selectItem itemLabel="E1" itemValue="E1" />
+                            <f:selectItem itemLabel="E2" itemValue="E2" />
+                            <f:selectItem itemLabel="E3" itemValue="E3" />
+                            <f:selectItem itemLabel="E4" itemValue="E4" />
+                            <f:selectItem itemLabel="F1" itemValue="F1" />
+                            <f:selectItem itemLabel="F2" itemValue="F2" />
+                            <f:selectItem itemLabel="F3" itemValue="F3" />
+                            <f:selectItem itemLabel="F4" itemValue="F4" />
+                            <f:selectItem itemLabel="G1" itemValue="G1" />
+                            <f:selectItem itemLabel="G2" itemValue="G2" />
+                            <f:selectItem itemLabel="G3" itemValue="G3" />
+                            <f:selectItem itemLabel="G4" itemValue="G4" />
+                            <f:selectItem itemLabel="H1" itemValue="H1" />
+                            <f:selectItem itemLabel="H2" itemValue="H2" />
+                            <f:selectItem itemLabel="H3" itemValue="H3" />
+                            <f:selectItem itemLabel="H4" itemValue="H4" />
+                            <f:selectItem itemLabel="I1" itemValue="I1" />
+                            <f:selectItem itemLabel="I2" itemValue="I2" />
+                            <f:selectItem itemLabel="I3" itemValue="I3" />
+                            <f:selectItem itemLabel="I4" itemValue="I4" />
+                            <f:selectItem itemLabel="J1" itemValue="J1" />
+                            <f:selectItem itemLabel="J2" itemValue="J2" />
+                            <f:selectItem itemLabel="J3" itemValue="J3" />
+                            <f:selectItem itemLabel="J4" itemValue="J4" />
+                            
+                        </p:selectManyCheckbox>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

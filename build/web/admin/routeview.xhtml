@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panel  style="width: 600px; " > 
+                        <p:panelGrid columns="2">
+                            <h:outputLabel for="name" value="Route Name: " />
+                            <p:outputLabel  value="#{sessionBean.selectedRoute.routeName}"/>
+                            <h:outputLabel for="fromid" value="From: " />
+                            <p:outputLabel value="#{sessionBean.selectedRoute.fromLocId}"/>
+                            <h:outputLabel for="toid" value="To: " />
+                            <p:outputLabel  value="#{sessionBean.selectedRoute.toLocId}"/>
+                            <f:facet name="footer" >
+                                <h:commandButton  value="Ok" action="route?faces-redirect=true"/>
+                            </f:facet>
+                        </p:panelGrid>
+                        <p:spacer height="30px;"/>
+
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

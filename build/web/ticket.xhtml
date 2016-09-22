@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./usertemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form class="noBorders">
+                    <p:outputLabel style="font-family: fantasy;  font-size: large" >
+                        Your booking is confirmed. Save this ticket.
+                    </p:outputLabel>
+
+                    <p:panel header="Ticket"  style=" size: 600px">
+                        
+
+
+<!--
+                        <p:panelGrid id="ticket" columns="3"  style="font-size: medium; border-style: dotted; width: 500px">
+                            <p:outputLabel value="Route: #{ticketDAO.ticket.fromLocation}"/>
+                            <p:outputLabel value="to"/>
+                            <p:outputLabel value="#{ticketDAO.ticket.toLocation}"/>
+                            <p:outputLabel value="Paasenger Name:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.userFirstName}"/>
+                            <p:outputLabel value="Date:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.dprtDate}"/>
+                            <p:outputLabel value="Bus Operator:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.optName}"/>
+                            <p:outputLabel value="Bus Type:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.categoryName}"/>
+                            <p:outputLabel value="Seat numbers:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.seatNumbers}"/>
+                            <p:outputLabel value="Fare:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.totalCost} Tk."/>
+                            <p:outputLabel value="Stopage:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.stopageName}"/>
+                            <p:outputLabel value="Bording Time:"/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="#{ticketDAO.ticket.dprtTime}"/>
+
+                        </p:panelGrid>
+
+-->
+                        <p:dataTable  id="lst" value="#{ticketDAO.ticket}" var="t" style=" width: 500px; font-size: medium" >
+                            
+                            <p:column style="font-weight: 400" >
+                                    PIN:<br/>
+                                    Route: <br/>
+                                    First Name: <br/>
+                                    Date: <br/>
+                                    Bus Operator:<br/> 
+                                    Bus Type: <br/>
+                                    Seat Numbers:<br/>
+                                    Total Fare: <br/>
+                                    Boarding Stoppage:<br/>
+                                    Boarding Time: <br/>
+                                </p:column>
+                            <p:column>
+                                <p:outputLabel value="#{ticketDAO.ticket.pin}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.fromLocation}"/> to <p:outputLabel value="#{ticketDAO.ticket.toLocation}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.userFirstName}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.dprtDate}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.optName}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.categoryName}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.seatNumbers}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.totalCost}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.stopageName}"/><br/>
+                                <p:outputLabel value="#{ticketDAO.ticket.dprtTime}"/><br/>
+                            </p:column>
+                        </p:dataTable>
+                        <h:commandLink value="Save as pdf">
+                            <p:dataExporter type="pdf" fileName="ticket" target="lst" pageOnly="true" />
+                        </h:commandLink>
+                        
+                    </p:panel>
+
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

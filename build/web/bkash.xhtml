@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./usertemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form class="noBorders">
+                    <p:outputLabel style="font-family: fantasy;  font-size: large" >
+                        Your Reservation is successfully complete.
+                    </p:outputLabel>
+                    <p:spacer height="20px"/>
+                    <h:panelGrid columns="2">
+                        <p:panel header="Booking Details">
+                            <p:outputLabel value="PIN: #{ticketDAO.ticket.pin}" style="font-family: fantasy;   font-size: large; color: blueviolet"  />
+                                
+                            
+                            <p:panelGrid columns="3"  style="font-size: medium; ">
+                                <p:outputLabel value="#{ticketDAO.ticket.fromLocation}"/>
+                                <p:outputLabel value="to"/>
+                                <p:outputLabel value="#{ticketDAO.ticket.toLocation}"/>
+                                <p:outputLabel value="Paasenger Name:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.userFirstName}"/>
+                                <p:outputLabel value="Date:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.dprtDate}"/>
+                                <p:outputLabel value="Bus Operator:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.optName}"/>
+                                <p:outputLabel value="Bus Type:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.categoryName}"/>
+                                <p:outputLabel value="Seat numbers:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.seatNumbers}"/>
+                                <p:outputLabel value="Fare:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.totalCost} Tk."/>
+                                <p:outputLabel value="Stopage:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.stopageName}"/>
+                                <p:outputLabel value="Bording Time:"/>
+                                <h:panelGroup/>
+                                <p:outputLabel value="#{ticketDAO.ticket.dprtTime}"/>
+
+                            </p:panelGrid>
+                        </p:panel>
+                        <p:panel header="Transection Confirm" style="min-height: 350px">
+                            <p:outputLabel style="font-family: fantasy;  font-size: large" >
+                                Complete your Payment to confirm Booking.
+                            </p:outputLabel>
+                            <p:panelGrid columns="2">
+                                <p:outputLabel value="Enter Bkash Transection Number: "/>
+                                <p:inputText required="true"/>
+                                <h:panelGroup/>
+                                <p:commandButton value="Verify Transection" action="ticket?faces-redirect=true"/>
+                            </p:panelGrid>
+                        </p:panel>
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

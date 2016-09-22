@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+        
+        
+
+        
+    </h:head>
+
+    <h:body >
+
+        <div id="banner">
+            <ui:insert name="top">
+                <table align="center" style="width: 100%;" >
+
+                    <tr >
+                        <td rowspan="2" style="padding-left: 20%" >
+
+                            <h:outputLabel value="e" style=" font-family: monospace; font-size: 70px; font-weight: bolder; color: darkorange "/>
+                            <h:outputLabel value="-boooking" style="font-family: monospace; font-size: 50px; font-weight: bolder; color: #036fab"/>
+                            <h:outputLabel value=".com" style="font-family: monospace; font-size: 20px; font-weight: bolder; color: darkorange "/>
+
+
+                        </td>
+                        <td  align="right" style=" padding-right: 10%">
+                            <a href="login.xhtml"  style="  color: #000000; font-size: larger ">Login </a> &nbsp;&nbsp;
+
+                        </td>
+
+
+                    </tr>
+                    <tr style="">
+
+                    </tr>
+
+                    <tr style="">
+                        <td colspan="2" style=" width: 100%; background: #036fab; padding-left: 20%; font-family: initial; font-size: 16px; font-weight: bolder; color: #ffffff;">
+
+
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            </ui:insert>
+        </div>
+        <div id="content">
+            <div id="left" class="left_content">
+                <h2>
+                    Abdullah Al Maruf
+                    <br/>
+
+                </h2>
+
+                <h:form>
+
+
+                    <p:panelMenu style="width:200px" >
+                        <p:submenu label="Booking">
+                            <p:menuitem value="Booking" url="booking.xhtml" icon="ui-icon-home" />
+
+                            <p:menuitem value="Support" url="" icon="ui-icon-wrench" />
+                        </p:submenu>
+                        <p:submenu label="Schedul">
+                            <p:menuitem value="Add Schejul" url="schedul.xhtml"/>
+                            <p:menuitem value="Search"    />
+                        </p:submenu>
+
+                        <p:submenu label="Bus Operator" >
+
+                            <p:menuitem value="Manage Bus operator" url="operator.xhtml"/>
+
+                        </p:submenu>
+                        <p:submenu label="Bus" >
+                            <p:menuitem value="Add Bus"  url="bus.xhtml" />
+                            <p:menuitem value="Update Bus"/>
+
+                        </p:submenu>
+                        <p:submenu label="User">
+                            <p:menuitem value="Add"  />
+                            <p:menuitem value="Manage"  />
+                        </p:submenu>
+                        <p:submenu label="Transection">
+                            <p:menuitem value="Add" />
+                            <p:menuitem value="Update"   />
+                            <p:menuitem value="Search" />
+                        </p:submenu>
+                        <p:submenu label="Location" >
+
+                            <p:menuitem value="Manage Location" url="location.xhtml"  />
+                        </p:submenu>
+                        <p:submenu label="Stopage" >
+                            <p:menuitem value="Manage Stopage" url="stopage.xhtml"  />
+                        </p:submenu>
+                        <p:submenu label="Route">
+                            <p:menuitem value="Manage Route" url="route.xhtml"  />
+                        </p:submenu>
+                        <p:submenu label="Category">
+                            <p:menuitem value="Manage" url="category.xhtml" />
+                        </p:submenu>
+
+                        <p:submenu label="User Type">
+                            <p:menuitem value="Manage"  />
+
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+
+            </div>
+            <div id="content" class="center_content">
+                <ui:insert name="content">
+                    Content
+                </ui:insert>
+
+
+
+
+            </div>
+        </div>
+
+
+    </h:body>
+
+</html>

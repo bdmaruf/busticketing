@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form id="form1">
+                    <p:growl id="messages" showDetail="true"/>
+                    
+                    <p:spacer height="50px;"/>
+                    <p:panel  >
+                       
+                        <p:dataTable id="data" var="stp" value="#{stopageDAO.allStopages}" style="height: 300px" scrollable="true" scrollRows="5">
+                            <p:column headerText="Id">
+                                <h:outputText value="#{stp.stopageId}" />
+                            </p:column>
+
+                            <p:column headerText="Stopage Name">
+                                <h:outputText value="#{stp.stopageName}" />
+                            </p:column>
+
+                            <p:column headerText="Location Name:">
+                                <h:outputText value="#{stp.stopageLocId}" />
+                            </p:column>
+                            <p:column headerText="Operator Name:">
+                                <h:outputText value="#{stp.operatorId}" />
+                            </p:column>
+
+                            <p:column headerText="Operations">
+                                <p:commandButton id="view" icon="ui-icon-search" action="stopageview?faces-redirect=true" >
+                                    <f:setPropertyActionListener value="#{stp}" target="#{sessionBean.selectedStopage}"/>
+                                </p:commandButton>
+                                <p:tooltip  for="view" value="View" />
+                                <p:commandButton id="edit" action="stopageedit?faces-redirect=true" icon="ui-icon-pencil" >
+                                    <f:setPropertyActionListener value="#{stp}" target="#{sessionBean.selectedStopage}"/>
+                                </p:commandButton>
+                                <p:tooltip  for="edit" value="Eiew" />
+                                <p:commandButton id="delete" action="#{stopageDAO.deleteStopage(stp)}" icon="ui-icon-closethick">
+                                    
+                                    <f:ajax execute="@this" render="data"/>
+                                </p:commandButton>
+                                <p:tooltip  for="delete" value="Delete" />
+                                
+                            </p:column>
+                        </p:dataTable>
+                        
+                    </p:panel>
+                    <p:commandButton value="Add New" action="stopageadd?faces-redirect=true"></p:commandButton>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+Bus Ticketing System
+OS: Ubuntu
+IDE: Netbeans
+jdk: 1.8
+server: tomcat 7.0.57
+Technology: jsp/servlet, jsf, primeface
+Database: MySql
+
+database file: busdb.sql
+admin url: http://localhost:8080/busticketing/faces/admin/bus.xhtml
+
+
+

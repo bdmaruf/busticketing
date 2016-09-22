@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panel  style="width: 600px; " > 
+                        <p:panelGrid columns="2">
+                            <h:outputLabel for="name" value="Location Name: " />
+                            <p:inputText  value="#{sessionBean.selectedLocation.locName }"/>
+                            <h:outputLabel for="district" value="District " />
+                            <p:inputText value="#{sessionBean.selectedLocation.district }"/>
+                            <f:facet name="footer">
+                                <h:commandButton value="Update" actionListener="#{locationDAO.editLocation(sessionBean.selectedLocation)}" action="location?faces-redirect=true">
+                                    
+                                    
+                                    <f:ajax execute="@this" render="@none"/>
+                                </h:commandButton>
+                                <h:commandButton value="Cancle" action="location?faces-redirect=true"/>
+                            </f:facet>
+                        </p:panelGrid>
+                        <p:spacer height="30px;"/>
+
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

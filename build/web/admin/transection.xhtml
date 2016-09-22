@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form id="form1">
+                    <p:growl id="messages" showDetail="true"/>
+                    
+                    <p:spacer height="50px;"/>
+                    <p:panel  >
+                       
+                        <p:dataTable var="loc" value="" style="height: 300px" scrollable="true" scrollRows="5">
+                            <p:column headerText="Id">
+                                <h:outputText value="01" />
+                            </p:column>
+
+                            <p:column headerText="Tranx Number">
+                                <h:outputText value="9876543" />
+                            </p:column>
+
+                            <p:column headerText="Amount">
+                                <h:outputText value="8907" />
+                            </p:column>
+                            <p:column headerText="Time">
+                                <h:outputText value="89:98am" />
+                            </p:column>
+
+                            <p:column headerText="Operations">
+                                <p:commandButton id="view" icon="ui-icon-search" action="routeview" ></p:commandButton>
+                                <p:tooltip  for="view" value="View" />
+                                <p:commandButton id="edit" icon="ui-icon-pencil" action="routeedit"></p:commandButton>
+                                <p:tooltip  for="edit" value="Eiew" />
+                                <p:commandButton id="delete" icon="ui-icon-closethick"></p:commandButton>
+                                <p:tooltip  for="delete" value="Delete" />
+                                
+                            </p:column>
+                        </p:dataTable>
+                        
+                    </p:panel>
+                    <p:commandButton value="Add New" action="routeadd"></p:commandButton>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

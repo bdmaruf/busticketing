@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panel  style="width: 600px; " > 
+                        <p:outputLabel value="Add Route" style="font-size: large"/>
+                        <p:panelGrid columns="2">
+                            <h:outputLabel for="bus" value="Bus id: " />
+                            <p:selectOneMenu value="#{schedul.busId}">
+                                <f:selectItems value="#{busDAO.allBus}" var="b" itemLabel="#{b.regNo}" itemValue="#{b.busId}"/>
+                            </p:selectOneMenu>
+                            <h:outputLabel for="deptdate" value="Dept. Date " />
+                            <p:calendar   mode="popup" value="#{schedul.dprtCalanDate}"  >
+
+                            </p:calendar>
+                            <p:outputLabel value="Dept Time:"/>
+                            <p:calendar id="depttime" value="#{schedul.dprtCalanTime}" pattern="HH:mm a" timeOnly="true"  />
+                            <h:outputLabel for="arivaldate" value="Arival Date " />
+                            <p:calendar   mode="popup" value="#{schedul.arivCalanDate}"/>
+                            <p:outputLabel value="Arival Time:"/>
+                            <p:calendar id="arivaltime" value="#{schedul.arivCalanTime}" pattern="HH:mm a" timeOnly="true"  />
+                            <h:outputLabel for="fare" value="Fare " />
+                            <p:inputText  value="#{schedul.fare}"/>
+                            <h:outputLabel for="fare" value="Status " />
+                            <p:inputText  value="#{schedul.schedulStatus}"/>
+                            <f:facet name="footer">
+                                <h:commandButton value="Add Item" action="schedul?faces-redirect=true" actionListener="#{schedulDAO.addSchedul(schedul)}"/>
+                            </f:facet>
+                        </p:panelGrid>
+                        <p:spacer height="30px;"/>
+
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

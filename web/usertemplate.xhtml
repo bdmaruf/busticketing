@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Hi</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="banner">
+            <ui:insert name="top">
+                <table align="center" style="width: 100%;" >
+
+                    <tr >
+                        <td rowspan="2" style="padding-left: 20%" >
+
+                            <h:outputLabel value="e" style=" font-family: monospace; font-size: 70px; font-weight: bolder; color: darkorange "/>
+                            <h:outputLabel value="-boooking" style="font-family: monospace; font-size: 50px; font-weight: bolder; color: #036fab"/>
+                            <h:outputLabel value=".com" style="font-family: monospace; font-size: 20px; font-weight: bolder; color: darkorange "/>
+
+
+                        </td>
+                        <td  align="right" style=" padding-right: 10%">
+                            <a href="login.xhtml"  style="  color: #000000; font-size: larger ">Login </a> &nbsp;&nbsp;
+                            <a href="registration.xhtml" style=" color: #000000; font-size: larger">Sign UP </a>&nbsp;&nbsp;
+                        </td>
+
+
+                    </tr>
+                    <tr style="">
+
+                    </tr>
+
+                    <tr style="">
+                        <td colspan="2" style=" width: 100%; background: #036fab; padding-left: 20%; font-family: initial; font-size: 16px; font-weight: bolder; color: #ffffff;">
+
+                            <a href="search.xhtml" style=" color: #ffffff; ">Home </a> &nbsp;&nbsp;
+                            <a href="searchticket.xhtml" style=" color: #ffffff">Ticket </a>&nbsp;&nbsp;
+                            <a href="" style=" color: #ffffff">CancleBooking </a>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            </ui:insert>
+        </div>
+
+        <div id="user_content" class="user_content" style=" min-height: 410px"  >
+            <ui:insert name="content">
+
+            </ui:insert>
+        </div>
+
+        <div id="footer">
+
+            <ui:insert name="bottom">
+                <table align="center" style="width: 100%;">
+                    <tr style="">
+                        <td colspan="2" style=" width: 100%; height:3px;  background: #036fab; padding-left: 20%; font-family: initial; font-size: 20px; font-weight: bolder; color: #ffffff;">
+
+
+
+                        </td>
+                    </tr>
+                    <tr >
+                        <td align="center" style="font-size: 13px">
+                            <a href="search.xhtml"  style="  color: darkgray; "> Home </a> &nbsp;&nbsp;&nbsp;
+                            <a href="searchticket.xhtml"  style="  color: #AFAFAF; "> Ticket </a> &nbsp;&nbsp;&nbsp;
+                            <a href=""  style="  color: #AFAFAF; ">CancleBooking </a> &nbsp;&nbsp;&nbsp;
+                            <a href="login.xhtml"  style="  color: #AFAFAF; ">Login </a> &nbsp;&nbsp;&nbsp;
+                            <a href="registration.xhtml"  style="  color: #AFAFAF; "> Sign UP </a> &nbsp;&nbsp;&nbsp;
+                            <a href="./admin/adminlogin.xhtml"  style="  color: #AFAFAF; "> Login(admin/test) </a> &nbsp;&nbsp;&nbsp;
+                        </td>
+
+                    </tr>
+                </table>
+
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

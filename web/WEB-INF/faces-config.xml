@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <validator>
+        <validator-id>seatSelectionValidation</validator-id>
+        <validator-class>mypkg.SeatSelectionValidation</validator-class>
+    </validator>
+    
+    <navigation-rule>
+        
+	<from-view-id>passengerinfo.xhtml</from-view-id>
+	<navigation-case>
+		<from-action>#{pageNevigetion.payPage}</from-action>
+		<from-outcome>bkash</from-outcome>
+		<to-view-id>confirmbooking.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>
+		<from-action>#{pageNevigetion.payPage}</from-action>
+		<from-outcome>mkash</from-outcome>
+		<to-view-id>confirmbooking_1.xhtml</to-view-id>
+	</navigation-case>
+        <navigation-case>
+		<from-action>#{pageNevigetion.payPage}</from-action>
+		<from-outcome>cradit</from-outcome>
+		<to-view-id>confirmbooking_2.xhtml</to-view-id>
+                
+	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>adminlogin.xhtml</from-view-id>
+        <navigation-case>
+		<from-action>#{loginManager.userAuthentication}</from-action>
+		<from-outcome>success</from-outcome>
+		<to-view-id>confirmbooking.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>
+		<from-action>#{pageNevigetion.payPage}</from-action>
+		<from-outcome>mkash</from-outcome>
+		<to-view-id>confirmbooking_1.xhtml</to-view-id>
+	</navigation-case>
+    </navigation-rule>
+        	
+    
+</faces-config>

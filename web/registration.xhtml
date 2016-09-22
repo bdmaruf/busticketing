@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./usertemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panel header="Information..">
+                        <p:panelGrid columns="4" class="noBorders" >
+                            <p:outputLabel value="First Name:"/>
+                            <p:inputText />
+                            <p:outputLabel value="Last Name:"/>
+                            <p:inputText/>
+                            <p:outputLabel value="User Name:"/>
+                            <p:inputText />
+                            <p:outputLabel value="Password:"/>
+                            <p:inputText/>
+                            <p:outputLabel value="Age:"/>
+                            <p:inputText />
+                            <p:outputLabel  value="Gender:" />
+                            <p:selectOneRadio  >
+                                <f:selectItem itemLabel="Male" itemValue="Male" />
+                                <f:selectItem itemLabel="Female" itemValue="Female" />
+
+                            </p:selectOneRadio>
+                            <p:outputLabel value="Contact No:"/>
+                            <p:inputText />
+                            <br/>
+                            <h:panelGroup/>
+                            <p:outputLabel value="Email:"/>
+                            <p:inputText />
+                            <h:panelGroup/>
+                            <p:commandButton value="Submit"/>
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

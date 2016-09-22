@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./admintemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panel  style="width: 600px; " > 
+                        <p:outputLabel value="Add Bus" style="font-size: large"/>
+                        <p:panelGrid columns="2">
+                            <h:outputLabel for="operator" value="Operator Name: " />
+                            <p:selectOneMenu value="#{bus.optId}">
+                                <f:selectItems value="#{operatorDAO.allOperator}" var="opt" itemLabel="#{opt.operatorName}" itemValue="#{opt.operatorId}"/>
+                            </p:selectOneMenu>
+                            <h:outputLabel for="category" value="Category" />
+                            <p:selectOneMenu value="#{bus.categoryId}">
+                                <f:selectItems value="#{categoryDAO.allCategory}" var="cat" itemLabel="#{cat.categoryName}" itemValue="#{cat.categoryId}"/>
+                            </p:selectOneMenu>
+                            <h:outputLabel for="route" value="Route Name " />
+                            <p:selectOneMenu  value="#{bus.routeId}">
+                                <f:selectItems value="#{routeDAO.allRoutes}" var="rt" itemLabel="#{rt.routeName}" itemValue="#{rt.routeId}"/>
+                            </p:selectOneMenu>
+                            <h:outputText value="Reg No:"/>
+                            <p:inputText value="#{bus.regNo}"/>
+                            <p:outputLabel value="Total seat"/>
+                            <p:inputText value="#{bus.totalSeat}"/>
+                            <f:facet name="footer">
+                                <h:commandButton value="Add Item" action="bus?faces-redirect=true" actionListener="#{busDAO.addBus(bus)}" />
+                            </f:facet>
+                        </p:panelGrid>
+                        <p:spacer height="30px;"/>
+
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
